@@ -1,20 +1,46 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import MainLayout from "./src/layouts/Main/MainLayout";
+import WorkoutHeader from "./src/molecules/WorkoutHeader";
+import Workout from "./src/molecules/Workout";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <WorkoutHeader />
+      <MainLayout>
+        <StatusBar style="auto" />
+
+        <Workout
+          difficulty={5}
+          reps={"20"}
+          sets={"2"}
+          title={"Supino Inclinado (Aquecimento)"}
+          performance={"+6"}
+          weight={"10KG"}
+          done
+        />
+
+        <Workout
+          difficulty={3}
+          reps={"12"}
+          sets={"4"}
+          title={"Supino Inclinado"}
+          performance={"+6"}
+          weight={"10KG"}
+          done
+        />
+
+        <Workout
+          difficulty={0}
+          reps={"10"}
+          sets={"4"}
+          title={"Supino Reto"}
+          performance={"+0"}
+          weight={""}
+          done={false}
+        />
+      </MainLayout>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
