@@ -1,8 +1,7 @@
 import React from "react";
-import { View } from "react-native";
-import MainLayout from "../../layouts/Main/MainLayout";
-import Workout from "../../molecules/Workout";
-import WorkoutHeader from "../../molecules/WorkoutHeader";
+import MainLayout from "../../components/layouts/Main";
+import Workout from "../../components/molecules/Workout";
+import WorkoutHeader from "../../components/molecules/WorkoutHeader";
 
 // import { Container } from './styles';
 
