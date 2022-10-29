@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import Workouts from "../screens/Workouts";
 
-import MIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import MIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 // import { Container } from './styles';
 
@@ -13,26 +13,43 @@ const TabNavigation: React.FC = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator
-       screenOptions={({ route }) => ({
-        headerShown: false,
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName: any;
+        screenOptions={({ route }) => ({
+          headerShown: false,
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName: any;
 
-          if (route.name === 'Workouts') {
-            iconName = 'dumbbell';
-          }
+            switch (route.name) {
+              case "Workouts":
+                iconName = "dumbbell";
+                break;
 
-          return <MIcons name={iconName} size={size} color={color} />;
-        },
-        tabBarActiveTintColor: '#CE3DF3',
-        tabBarStyle: {
-          backgroundColor: "#272A33",
-          borderTopColor: "#CE3DF3",
-          borderTopWidth: 2,
-        },
-        tabBarShowLabel: false
-      })}>
-      <Tab.Screen name="Workouts" component={Workouts} />
+              case "Water":
+                iconName = "water";
+                break;
+
+              case "Dashboard":
+                iconName = "view-dashboard";
+                break;
+
+              default:
+                break;
+            }
+
+            return <MIcons name={iconName} size={size} color={color} />;
+          },
+          tabBarActiveTintColor: "#CE3DF3",
+          tabBarInactiveTintColor: "#1C1F26",
+          tabBarStyle: {
+            backgroundColor: "#272A33",
+            borderTopColor: "#CE3DF3",
+            borderTopWidth: 2,
+          },
+          tabBarShowLabel: false,
+        })}
+      >
+        <Tab.Screen name="Water" component={Workouts} />
+        <Tab.Screen name="Workouts" component={Workouts} />
+        <Tab.Screen name="Dashboard" component={Workouts} />
       </Tab.Navigator>
     </NavigationContainer>
   );
