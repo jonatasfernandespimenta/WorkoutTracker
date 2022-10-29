@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container } from './styles';
 
-const MainLayout = ({children}: any) => {
+const MainLayout = ({children, center}: any) => {
   return(
     <Container>
       {children}

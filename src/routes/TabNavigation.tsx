@@ -4,6 +4,7 @@ import React from "react";
 import Workouts from "../screens/Workouts";
 
 import MIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import WorkoutInfo from "../screens/WorkoutInfo";
 
 // import { Container } from './styles';
 
@@ -47,7 +48,7 @@ const TabNavigation: React.FC = () => {
           tabBarShowLabel: false,
         })}
       >
-        <Tab.Screen name="Water" component={Workouts} />
+        <Tab.Screen name="Water" component={WorkoutInfo} />
         <Tab.Screen name="Workouts" component={Workouts} />
         <Tab.Screen name="Dashboard" component={Workouts} />
       </Tab.Navigator>

@@ -1,14 +1,25 @@
-import React from 'react';
+import React from "react";
+import RenderIf from "../RenderIf";
 
-import { Container } from './styles';
-import { TCardProps } from './types';
+import { Container, TouchableContainer } from "./styles";
+import { TCardProps } from "./types";
 
 const Card = (props: TCardProps) => {
   return (
-    <Container>
-      {props.children}
-    </Container>
+    <>
+      <RenderIf condition={props.touchable}>
+        <TouchableContainer onPress={props.onPress} minH={props.minH} height={props.height}>
+          {props.children}
+        </TouchableContainer>
+      </RenderIf>
+
+      <RenderIf condition={!props.touchable}>
+        <Container minH={props.minH} height={props.height}>
+          {props.children}
+        </Container>
+      </RenderIf>
+    </>
   );
-}
+};
 
 export default Card;
