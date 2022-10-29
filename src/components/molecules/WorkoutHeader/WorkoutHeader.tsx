@@ -5,10 +5,12 @@ import Header from "../../atoms/Header";
 
 import { Container } from "./styles";
 
-const week = ["SEG", "TER", "QUA", "QUI", "SEX", "SAB", "DOM"];
+const week = ["DOM", "SEG", "TER", "QUA", "QUI", "SEX", "SAB"];
+
+const currWeekDay = new Date().getDay();
 
 const WorkoutHeader: React.FC = () => {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(currWeekDay);
 
   return (
     <Header>
