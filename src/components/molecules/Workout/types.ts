@@ -6,4 +6,7 @@ export type TWorkoutProps = {
   performance: string;
   difficulty: number;
   done: boolean;
+  index: number;
+  onPress?: () => void;
+  weekday?: string;
 };

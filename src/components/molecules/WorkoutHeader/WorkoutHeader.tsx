@@ -9,18 +9,22 @@ const week = ["DOM", "SEG", "TER", "QUA", "QUI", "SEX", "SAB"];
 
 const currWeekDay = new Date().getDay();
 
-const WorkoutHeader: React.FC = () => {
-  const [active, setActive] = useState(currWeekDay);
+interface WorkoutHeaderProps {
+  active: number;
+  onChange: (value: number) => void;
+}
 
+const WorkoutHeader: React.FC<WorkoutHeaderProps> = ({ active, onChange }) => {
   return (
     <Header>
       <Container horizontal>
-        {week.map((day, id) => (
+        {week.map((day, index) => (
           <CircleWithText
             text={day}
-            key={id}
-            active={active === id}
-            onTouch={() => setActive(id)}
+            index={index}
+            key={day}
+            active={active === index}
+            onTouch={() => onChange(index)}
           />
         ))}
       </Container>

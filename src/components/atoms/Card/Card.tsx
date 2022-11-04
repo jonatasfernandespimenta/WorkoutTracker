@@ -1,25 +1,76 @@
 import React from "react";
-import RenderIf from "../RenderIf";
+import { TouchableOpacity } from "react-native";
 
-import { Container, TouchableContainer } from "./styles";
+
+import { Container } from "./styles";
 import { TCardProps } from "./types";
 
 const Card = (props: TCardProps) => {
   return (
-    <>
-      <RenderIf condition={props.touchable}>
-        <TouchableContainer onPress={props.onPress} minH={props.minH} height={props.height}>
-          {props.children}
-        </TouchableContainer>
-      </RenderIf>
-
-      <RenderIf condition={!props.touchable}>
-        <Container minH={props.minH} height={props.height}>
-          {props.children}
-        </Container>
-      </RenderIf>
-    </>
+    <Container
+      minH={props.minH}
+      height={props.height}
+      {...(props?.touchable && { as: TouchableOpacity })}
+      {...props}
+    >
+      {props.children}
+    </Container>
   );
 };
 
 export default Card;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// penis grande e grosso

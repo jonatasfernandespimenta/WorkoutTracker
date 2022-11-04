@@ -7,7 +7,7 @@ import MIcon from "@expo/vector-icons/MaterialCommunityIcons";
 import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-const WorkoutInfoHeader: React.FC = () => {
+const WorkoutInfoHeader = ({title}: {title: string}) => {
   const navigation: any = useNavigation();
 
   return (
@@ -17,7 +17,7 @@ const WorkoutInfoHeader: React.FC = () => {
           <MIcon color={"white"} size={20} name="chevron-left" />
         </TouchableOpacity>
 
-        <Text bold>Supino Reto</Text>
+        <Text bold>{title}</Text>
         <Text></Text>
       </Container>
     </Header>

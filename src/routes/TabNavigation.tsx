@@ -12,7 +12,6 @@ const Tab = createBottomTabNavigator();
 
 const TabNavigation: React.FC = () => {
   return (
-    <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
           headerShown: false,
@@ -48,11 +47,10 @@ const TabNavigation: React.FC = () => {
           tabBarShowLabel: false,
         })}
       >
-        <Tab.Screen name="Water" component={WorkoutInfo} />
+        <Tab.Screen name="Water" component={Workouts} />
         <Tab.Screen name="Workouts" component={Workouts} />
         <Tab.Screen name="Dashboard" component={Workouts} />
       </Tab.Navigator>
-    </NavigationContainer>
   );
 };
 
